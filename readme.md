@@ -43,17 +43,36 @@ Deployment:
 - Pipelines handle the process, tools like Kubernetes orchestrate deployments at scale
 
 Operate: 
-- System continues to run reliably under real world conditions
+- To ensure system continues to run reliably under real world conditions
 - Monitoring Server health
 - Applying security patches
 - Managing infrastructure configs
 - Scaling resources when traffic spikes
 
-Monitoring
+Monitoring:
 - Gathering data about system's performance
 - Uptime, error rates and business metrics (Sentry)
 
 And the cycle continues...
+
+
+## CI/CD
+
+Coding -> Building -> Testing -> Deployment. It's an automated conveyer belt for software. 
+
+CI -> Continuous Integration. Everytime a dev pushes code, tests run automatically and if something breaks, the pipeline stops and we fix it before moving forward.
+
+CD -> Continuous Depployment. Once all the tests are passed, app is automatically deployed to staging or production.
+
+These pipelines are written using tools like github actions, jenkins, etc. 
+
+Containers eliminate versioning conflicts by packaging applications along with all their dependencies, ensuring consistency across environments. Most popular tool is Docker.
+
+Container orchestration is the process of managing and running containers at scale. Go to tool here is Kubernetes.
+
+Infrastructure as Code (IaC) is the practice of provisioning and managing infrastructure through code instead of manual processes, with Terraform being one of the most popular tools.
+
+Scripting to automate processes.
 
 
 
