@@ -1,0 +1,1 @@
+## DevOps is the process of how an idea becomes software in user's hands and gets better with feedback
