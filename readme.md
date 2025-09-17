@@ -94,7 +94,7 @@ Important YAML keywords:
 - `on`: Defines triggers (push, PR, schedule)
 - `jobs`: Define jobs, their OS, and steps
 - `steps`: Sequential commands or actions
-- `run`: Shell commands to exexute
+- `run`: Shell commands to execute
 - `uses`: Use prebuilt actions
 - `with`: Set environment variables
 - `needs`: Make on job depend on another
