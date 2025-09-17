@@ -81,6 +81,24 @@ Infrastructure as Code (IaC) is the practice of provisioning and managing infras
 
 Scripting to automate processes.
 
+A pipeline is a set of automated steps that takes your code from the moment you push it all the way to production.
+
+Tools: Jenkins, GitLab CI/CD, Circle CI, Travis CI, Azure DevOps.
+Most devs prefer Github Actions.
+
+Github Actions pipeline is a workflow. Workflows live inside your repo (.github/workflows) Each Workflow is a `.yaml` file (triggers, events and jobs)
+
+Important YAML keywords:
+
+- `name`: Workflow/job title
+- `on`: Defines triggers (push, PR, schedule)
+- `jobs`: Define jobs, their OS, and steps
+- `steps`: Sequential commands or actions
+- `run`: Shell commands to exexute
+- `uses`: Use prebuilt actions
+- `with`: Set environment variables
+- `needs`: Make on job depend on another
+
 ## Version Control (Git)
 
 Git is a distributed version control system. The version control part helps you track and manage code changes over time. Distributed means every developer's computer has a complete copy of the codebase, including the entire history of changes and information about who changed what and when. It eases our worflow.
