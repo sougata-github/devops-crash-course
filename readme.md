@@ -106,3 +106,39 @@ Git is a distributed version control system. The version control part helps you 
 A repo is where git tracks everything in your project.
 
 Github is a cloud platform that allows you to store your repositories online and collaborate with others.
+
+```yaml
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Set up Node.jobs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install dependecies
+        run: npm install
+      - name: Run tests
+        run: npm test
+```
+
+| **Part**                                                          | **Explanation**                                                                 |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `name: CI Pipeline`                                               | The name of the workflow, visible in the GitHub Actions tab.                    |
+| `on:` → `push:` → `branches: [main]`                              | Defines the trigger. Runs only when code is pushed to the `main` branch.        |
+| `jobs:` → `build:`                                                | A job is a set of steps. Here we define a single job named `build`.             |
+| `runs-on: ubuntu-latest`                                          | The virtual machine (runner) environment. Uses the latest Ubuntu Linux image.   |
+| `steps:`                                                          | Sequence of tasks the job will run.                                             |
+| **Step 1:** `uses: actions/checkout@v5`                           | Checks out your repository’s code into the runner so other steps can access it. |
+| **Step 2:** `uses: actions/setup-node@v3` with `node-version: 20` | Installs and configures Node.js (version 20) on the runner.                     |
+| **Step 3:** `run: npm install`                                    | Installs project dependencies from `package.json`.                              |
+| **Step 4:** `run: npm test`                                       | Executes your project’s test suite.                                             |
