@@ -142,3 +142,75 @@ Git is a distributed version control system. The version control part helps you 
 A repo is where git tracks everything in your project.
 
 Github is a cloud platform that allows you to store your repositories online and collaborate with others.
+
+## Docker
+
+Docker makes sure our code runs conistently across all environments. It is a platform that enables development, packaging and execution of applications in a unified environment.
+
+By clearly specifying our app's requirements such as Node.js and necessary packages, Docker generates a self contained box that includes it's own operating system and all the components essential for running our app. This box acts like a separate computer virtually providing the o.s, runtimes and everything required for our app to run smoothly.
+
+Advantages:
+
+- Consistency across environments
+- Isolation (boundary b/w app and it's dependencies)
+- Portability (move app across different stages, dev to test to prod)
+- Version Control
+- Scalability (Docker makes copies of our app when needed)
+- Devops integration
+
+Docker containers are lightweight and share the host system resources making them more efficient than traditional virtual machines leading to fast start times and reduced resource usage.
+
+How does Docker work?
+
+Two main concepts:
+
+- Images
+- Containers
+
+Entire workflow revloves around the two.
+
+A **Docker Image** is a lightweight, standalone executable package that includes everything to run a piece of software (including code, runtime like Node.js, libraries, system tools and even the operating system)
+
+These images need to run somewhere. This is where **Docker Containers** come in. A Docker container is a runnable instance of a Docker image. It represents the execution environment for a specific application. A container takes everything specified in the image and follows it's intructions by executing necessary commands like downloading packages and setting things up to run our app.
+
+We can run multiple containers from a single image. Create one image and get as many instances you want in the form of containers.
+
+A **Docker Volume** is a persistent data storage mechanism that allows data to be shared between a docker container and the host machine or even multiple containers.
+
+**Docker Network** is a communication channel that enables different docker containers to talk to each other or with external world. It creates connectivity allowing containers to share information and services while maintaining isolation.
+
+Docker Workflow:
+
+```mermaid
+flowchart LR
+    subgraph Client
+        CLI[Docker CLI]
+    end
+
+    subgraph Host["Host (Docker Daemon)"]
+        Daemon[dockerd]
+        Images[Local Images]
+        Containers[Containers]
+    end
+
+    subgraph Registry["Registry (Docker Hub)"]
+        Repo[Image Repositories]
+    end
+
+    %% Workflow
+    CLI -->|docker build/run| Daemon
+    CLI -->|docker pull/push| Repo
+
+    Daemon -->|stores| Images
+    Daemon -->|runs| Containers
+
+    Images <-->|pull/push| Repo
+```
+
+Docker Client: User interface (CLI or GUI) for interacting with Docker. Tool we use to give Docker commands (build, run and manage images or containers)
+
+Docker Host (Docker Daemon): Background process responsible for managing containers on host systems. It listens for Docker client commands, creates and manages containers, builds images and handles other Docker related tasks.
+
+Docker Registry (Docker Hub): Centralised repo of Docker images. It hosts both public and private registries or packages. Docker images are stored in these registries and when we run a container, Docker may pull the image from the registry if it's unavailable locally.
+
+Docker is to DockerHub is what Git is to GitHub
