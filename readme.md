@@ -67,7 +67,7 @@ And the cycle continues...
 
 Coding -> Building -> Testing -> Deployment. It's an automated conveyer belt for software.
 
-CI -> Continuous Integration. Everytime a dev pushes code, tests run automatically and if something breaks, the pipeline stops and we fix it before moving forward.
+CI -> Continuous Integration. Everytime a developer pushes code, tests run automatically and if something breaks, the pipeline stops and we fix it before moving forward.
 
 CD -> Continuous Depployment. Once all the tests are passed, app is automatically deployed to staging or production.
 
@@ -97,15 +97,7 @@ Important YAML keywords:
 - `run`: Shell commands to execute
 - `uses`: Use prebuilt actions
 - `with`: Set environment variables
-- `needs`: Make on job depend on another
-
-## Version Control (Git)
-
-Git is a distributed version control system. The version control part helps you track and manage code changes over time. Distributed means every developer's computer has a complete copy of the codebase, including the entire history of changes and information about who changed what and when. It eases our worflow.
-
-A repo is where git tracks everything in your project.
-
-Github is a cloud platform that allows you to store your repositories online and collaborate with others.
+- `needs`: Make one job depend on another
 
 ```yaml
 name: CI Pipeline
@@ -142,3 +134,13 @@ jobs:
 | **Step 2:** `uses: actions/setup-node@v3` with `node-version: 20` | Installs and configures Node.js (version 20) on the runner.                     |
 | **Step 3:** `run: npm install`                                    | Installs project dependencies from `package.json`.                              |
 | **Step 4:** `run: npm test`                                       | Executes your project’s test suite.                                             |
+
+## Version Control (Git)
+
+Git is a distributed version control system. The version control part helps you track and manage code changes over time. Distributed means every developer's computer has a complete copy of the codebase, including the entire history of changes and information about who changed what and when. It eases our worflow.
+
+A repo is where git tracks everything in your project.
+
+Github is a cloud platform that allows you to store your repositories online and collaborate with others.
+
+                                           |
