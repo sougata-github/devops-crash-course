@@ -160,7 +160,7 @@ Advantages:
 
 Docker containers are lightweight and share the host system resources making them more efficient than traditional virtual machines leading to fast start times and reduced resource usage.
 
-How does Docker work?
+### How does Docker work?
 
 Two main concepts:
 
@@ -179,7 +179,7 @@ A **Docker Volume** is a persistent data storage mechanism that allows data to b
 
 **Docker Network** is a communication channel that enables different docker containers to talk to each other or with external world. It creates connectivity allowing containers to share information and services while maintaining isolation.
 
-Docker Workflow:
+### Docker Workflow
 
 Docker Client: User interface (CLI or GUI) for interacting with Docker. Tool we use to give Docker commands (build, run and manage images or containers)
 
