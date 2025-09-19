@@ -188,3 +188,20 @@ Docker Host (Docker Daemon): Background process responsible for managing contain
 Docker Registry (Docker Hub): Centralised repo of Docker images. It hosts both public and private registries or packages. Docker images are stored in these registries and when we run a container, Docker may pull the image from the registry if it's unavailable locally.
 
 Docker is to DockerHub is what Git is to GitHub
+
+### Creating a Docker Image
+
+A docker image is a special `.docker` file. It is a set of instructions telling docker how to build an image for your app.
+
+Some commands/keywords:
+
+- FROM: Specifies base image to use for new image
+- WORKDIR: Sets the working directory for instructions
+- COPY: Files or directories from the build context to image
+- RUN: Executes command in shell during image build
+- EXPOSE: Tells containers to listen to specific network ports at run time
+- ENV: Sets environment variables during build process
+- ARG: Defines build time variables
+- VOLUME: Specifies location inside container for connecting external storage
+- CMD: Default command to execute when container starts (can be overridden)
+- ENTRYPOINT: Specifies default executable to be run when conatiner starts (cannot be overridden)
