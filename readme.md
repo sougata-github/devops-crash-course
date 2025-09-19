@@ -142,5 +142,3 @@ Git is a distributed version control system. The version control part helps you 
 A repo is where git tracks everything in your project.
 
 Github is a cloud platform that allows you to store your repositories online and collaborate with others.
-
-                                           |
