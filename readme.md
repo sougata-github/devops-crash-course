@@ -181,32 +181,6 @@ A **Docker Volume** is a persistent data storage mechanism that allows data to b
 
 Docker Workflow:
 
-```mermaid
-flowchart LR
-    subgraph Client
-        CLI[Docker CLI]
-    end
-
-    subgraph Host["Host (Docker Daemon)"]
-        Daemon[dockerd]
-        Images[Local Images]
-        Containers[Containers]
-    end
-
-    subgraph Registry["Registry (Docker Hub)"]
-        Repo[Image Repositories]
-    end
-
-    %% Workflow
-    CLI -->|docker build/run| Daemon
-    CLI -->|docker pull/push| Repo
-
-    Daemon -->|stores| Images
-    Daemon -->|runs| Containers
-
-    Images <-->|pull/push| Repo
-```
-
 Docker Client: User interface (CLI or GUI) for interacting with Docker. Tool we use to give Docker commands (build, run and manage images or containers)
 
 Docker Host (Docker Daemon): Background process responsible for managing containers on host systems. It listens for Docker client commands, creates and manages containers, builds images and handles other Docker related tasks.
