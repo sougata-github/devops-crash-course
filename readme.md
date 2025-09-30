@@ -195,16 +195,16 @@ A docker image is a special `.docker` file. It is a set of instructions telling 
 
 Some commands/keywords:
 
-- FROM: Specifies base image to use for new image
-- WORKDIR: Sets the working directory for instructions
-- COPY: Files or directories from the build context to image
-- RUN: Executes command in shell during image build
-- EXPOSE: Tells containers to listen to specific network ports at run time
-- ENV: Sets environment variables during build process
-- ARG: Defines build time variables
-- VOLUME: Specifies location inside container for connecting external storage
-- CMD: Default command to execute when container starts (can be overridden)
-- ENTRYPOINT: Specifies default executable to be run when conatiner starts (cannot be overridden)
+- `FROM`: Specifies base image to use for new image
+- `WORKDIR`: Sets the working directory for instructions
+- `COPY`: Files or directories from the build context to image
+- `RUN`: Executes command in shell during image build
+- `EXPOSE`: Tells containers to listen to specific network ports at run time
+- `ENV`: Sets environment variables during build process
+- `ARG`: Defines build time variables
+- `VOLUME`: Specifies location inside container for connecting external storage
+- `CMD`: Default command to execute when container starts (can be overridden)
+- `ENTRYPOINT`: Specifies default executable to be run when conatiner starts (cannot be overridden)
 
 Pulling an image from Docker Registry: `docker pull ubuntu`
 
@@ -220,7 +220,23 @@ Creating a Docker Image:
 - Set the working directory to /app. This is the directory where commands will be run.
 - Copy everything from current directory to Docker image
 - Specify the command to run the app
-- Build the image: go to directory where the Dockerfile is and run `docker build -t path .`
+- Build the image: go to directory where the Dockerfile is and run `docker build -t <image-name> <path>`
 - Run `docker images` to check all images
-- Containerise your app: `docker run image`
-- If you want to open your app in shell mode: `docker run -it path sh`
+- Containerise your app: `docker run <image-name>`
+- If you want to open your app in shell mode: `docker run -it <path> sh`
+- `.` -> current working directory
+
+PORT MAPPING - Allows us to map ports between Docker container and host machine
+
+`docker run -p <port>:<port> <image-name>`
+
+Mount the current working directory into the app directory inside container. Local code gets linked to container. Any changes made will be immediately reflected: `docker run -p <port>:<port> -v "$(pwd):/app" -v /app/node_modules <image-name>`
+
+v is the volume here
+
+all containers: `docker ps -a`
+running containers: `docker ps`
+
+stopping a running container: `docker stop <container-id>`
+get rid of stopped containers: `docker container prune`
+remove a specific container: `docker rm <container-id>`
