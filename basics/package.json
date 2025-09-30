@@ -1,0 +1,31 @@
+{
+  "name": "devops",
+  "version": "1.0.0",
+  "description": "Stages in Dev + Ops:",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "test": "tsx tests/test.ts",
+    "build": "rimraf dist && npx tsc",
+    "start": "npm run build && node dist/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sougata-github/devops-crash-course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sougata-github/devops-crash-course/issues"
+  },
+  "homepage": "https://github.com/sougata-github/devops-crash-course#readme",
+  "dependencies": {
+    "rimraf": "^6.0.1",
+    "tsx": "^4.20.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.1"
+  }
+}
