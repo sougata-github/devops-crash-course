@@ -205,3 +205,22 @@ Some commands/keywords:
 - VOLUME: Specifies location inside container for connecting external storage
 - CMD: Default command to execute when container starts (can be overridden)
 - ENTRYPOINT: Specifies default executable to be run when conatiner starts (cannot be overridden)
+
+Pulling an image from Docker Registry: `docker pull ubuntu`
+
+Running the image: `docker run -it ubuntu`
+
+The above command generates a container based on the pulled image.
+
+Creating a Docker Image:
+
+- Create a `Dockerfile` at the root.
+- Select base image to run the app.
+  - Since we want to run a JS/TS file we can select a Node runtime from Docker Hub.
+- Set the working directory to /app. This is the directory where commands will be run.
+- Copy everything from current directory to Docker image
+- Specify the command to run the app
+- Build the image: go to directory where the Dockerfile is and run `docker build -t path .`
+- Run `docker images` to check all images
+- Containerise your app: `docker run image`
+- If you want to open your app in shell mode: `docker run -it path sh`
