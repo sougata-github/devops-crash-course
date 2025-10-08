@@ -230,9 +230,32 @@ PORT MAPPING - Allows us to map ports between Docker container and host machine
 
 `docker run -p <port>:<port> <image-name>`
 
-Mount the current working directory into the app directory inside container. Local code gets linked to container. Any changes made will be immediately reflected: `docker run -p <port>:<port> -v "$(pwd):/app" -v /app/node_modules <image-name>`
+Mount the current working directory into the app directory inside container. Local code gets linked to container. Any changes made will be immediately reflected: `docker run -p <port>:<port> -e CHOKIDAR_USEPOLLING=true -v "$(pwd):/app" -v /app/node_modules <image-name>`
 
 v is the volume here
+
+-e sets the environment variable at runtime. CHOKIDAR_USEPOLLING=true. Essentially telling Vite inside the container to use polling mode to pick up changes.
+
+```bash
+-v "$(pwd):/app"
+```
+
+the above mount overwrites /app entirely — including /app/node_modules.
+So those Linux-compatible deps get hidden created during build
+
+Solution is to add a second mount
+
+```bash
+-v /app/node_modules
+```
+
+/app comes from your host machine (code, package.json, etc.)
+
+and when adding new deps reinstall inside the running container or rebuild the entire image
+
+```bash
+docker -exec -it <container_name> pnpm install
+```
 
 all containers: `docker ps -a`
 running containers: `docker ps`
