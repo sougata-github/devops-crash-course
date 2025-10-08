@@ -34,7 +34,7 @@ RUN chown -R app:app .
 # switch to non-root user
 USER app
 
-# expose pose 5173 to tell Docker that the container listens on the specified network at runtime
+# expose port 5173 to tell Docker that the container listens on the specified network at runtime
 EXPOSE 5173
 
 # run the app

@@ -191,7 +191,7 @@ Docker is to DockerHub is what Git is to GitHub
 
 ### Creating a Docker Image
 
-A docker image is a special `.docker` file. It is a set of instructions telling docker how to build an image for your app.
+A docker image is a special `docker` file. It is a set of instructions telling docker how to build an image for your app.
 
 Some commands/keywords:
 
@@ -204,7 +204,7 @@ Some commands/keywords:
 - `ARG`: Defines build time variables
 - `VOLUME`: Specifies location inside container for connecting external storage
 - `CMD`: Default command to execute when container starts (can be overridden)
-- `ENTRYPOINT`: Specifies default executable to be run when conatiner starts (cannot be overridden)
+- `ENTRYPOINT`: Specifies default executable to be run when container starts (cannot be overridden)
 
 Pulling an image from Docker Registry: `docker pull ubuntu`
 
@@ -223,7 +223,7 @@ Creating a Docker Image:
 - Build the image: go to directory where the Dockerfile is and run `docker build -t <image-name> <path>`
 - Run `docker images` to check all images
 - Containerise your app: `docker run <image-name>`
-- If you want to open your app in shell mode: `docker run -it <path> sh`
+- If you want to open your app in shell mode: `docker run -it <image-name> sh`
 - `.` -> current working directory
 
 PORT MAPPING - Allows us to map ports between Docker container and host machine
