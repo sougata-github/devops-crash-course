@@ -69,7 +69,7 @@ Coding -> Building -> Testing -> Deployment. It's an automated conveyer belt for
 
 CI -> Continuous Integration. Everytime a developer pushes code, tests run automatically and if something breaks, the pipeline stops and we fix it before moving forward.
 
-CD -> Continuous Depployment. Once all the tests are passed, app is automatically deployed to staging or production.
+CD -> Continuous Deployment. Once all the tests are passed, app is automatically deployed to staging or production.
 
 These pipelines are written using tools like github actions, jenkins, etc.
 
