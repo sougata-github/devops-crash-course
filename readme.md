@@ -259,6 +259,6 @@ docker -exec -it <container_name> pnpm install
 
 - all containers: `docker ps -a`
 - running containers: `docker ps`
-- stopping a running container: `docker stop <container-id>`
-- get rid of stopped containers: `docker container prune`
 - remove a specific container: `docker rm <container-id>`
+- get rid of stopped containers: `docker container prune`
+- stopping a running container: `docker stop <container-id>`
