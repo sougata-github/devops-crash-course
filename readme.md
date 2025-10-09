@@ -269,3 +269,13 @@ docker -exec -it <container_name> pnpm install
 - docker login
 - docker tag <image-name> <username>/<image-name>
 - docker push <username>/<image-name>
+
+### Automating the containerising process
+
+We can improve the workflow by using `Docker Compose` and run everything our application needs to run using a single command.
+
+Docker Compose is a tool that helps us to define and manage multi-container docker applications. It uses a yaml file to configure the services, networks and volumes for your app.
+
+We can also use `docker init` to generate the docker compose yaml file based on our preferences.
+
+To run the compose.yaml use `docker compose up`
