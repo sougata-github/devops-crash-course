@@ -262,3 +262,10 @@ docker -exec -it <container_name> pnpm install
 - remove a specific container: `docker rm <container-id>`
 - get rid of stopped containers: `docker container prune`
 - stopping a running container: `docker stop <container-id>`
+
+### Publishing Docker Image
+
+- cd into working directory
+- docker login
+- docker tag <image-name> <username>/<image-name>
+- docker push <username>/<image-name>
