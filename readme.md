@@ -267,8 +267,8 @@ docker -exec -it <container_name> pnpm install
 
 - cd into working directory
 - docker login
-- docker tag <image-name> <username>/<image-name>
-- docker push <username>/<image-name>
+- docker tag `<image-name> <username>/<image-name>`
+- docker push `<username>/<image-name>`
 
 ### Automating the containerising process
 
