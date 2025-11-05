@@ -278,4 +278,4 @@ Docker Compose is a tool that helps us to define and manage multi-container dock
 
 We can also use `docker init` to generate the docker compose yaml file based on our preferences.
 
-To run the compose.yaml use `docker compose up`
+To run the compose.yaml use `docker compose up` or `docker compose up -d` to run in detached mode.
