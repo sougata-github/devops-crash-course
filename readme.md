@@ -208,7 +208,7 @@ Some commands/keywords:
 
 Pulling an image from Docker Registry: `docker pull ubuntu`
 
-Running the image: `docker run -it ubuntu`
+Running the image: `docker run -it <image-name>`
 
 The above command generates a container based on the pulled image.
 
